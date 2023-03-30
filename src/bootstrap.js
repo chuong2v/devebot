@@ -483,7 +483,12 @@ bootstrap.require = function(packageName) {
 function locatePackage({issueInspector} = {}, pkgInfo) {
   chores.assertOk(issueInspector, pkgInfo, pkgInfo.name, pkgInfo.type, pkgInfo.path);
   try {
-    const entrypoint = require.resolve(pkgInfo.path);
+    let entrypoint;
+    try {
+      entrypoint = require.resolve(pkgInfo.path);
+    } catch(e) {
+      entrypoint = require.resolve(buf.packageJson.name);
+    }
     const buf = {};
     buf.packagePath = path.dirname(entrypoint);
     buf.packageJson = chores.loadPackageInfo(buf.packagePath);
@@ -502,7 +507,7 @@ function locatePackage({issueInspector} = {}, pkgInfo) {
         }
       }
       if (nodash.isString(pkgInfo.name)) {
-        if (pkgInfo.name !== buf.packageJson.name) {
+        if (pkgInfo.name !== (buf.packageJson.name || '').split('/').pop()) {
           const MismatchedNameError = errors.assertConstructor('PackageError');
           throw new MismatchedNameError('package name is different with provided name');
         }
