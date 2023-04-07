@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devebot/devebot.git"
+    "url": "git+https://github.com/chuong2v/devebot.git"
   },
   "keywords": [
     "devebot",
@@ -37,14 +37,14 @@
   ],
   "author": {
     "name": "Devebot",
-    "email": "contact@devebot.com",
-    "url": "https://github.com/devebot"
+    "email": "chuong2v@gmail.com",
+    "url": "https://github.com/chuong2v"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/devebot/devebot/issues"
+    "url": "https://github.com/chuong2v/devebot/issues"
   },
-  "homepage": "https://github.com/devebot/devebot#readme",
+  "homepage": "https://github.com/chuong2v/devebot#readme",
   "dependencies": {
     "bluebird": "3.5.5",
     "codetags": "0.1.2",
