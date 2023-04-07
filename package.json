@@ -1,6 +1,6 @@
 {
   "name": "@chuong2v/devebot",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Nodejs Microservice Framework",
   "main": "index.js",
   "directories": {
